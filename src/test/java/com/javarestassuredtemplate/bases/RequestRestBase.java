@@ -31,7 +31,7 @@ public abstract class RequestRestBase {
         config = RestAssuredConfig.newConfig().jsonConfig(jsonConfig().numberReturnType(BIG_DECIMAL));
         enableLoggingOfRequestAndResponseIfValidationFails();
         headers.put("content-type", "application/json");
-        //headers.put("Authorization", "Bearer "+GlobalParameters.TOKEN); //<== EXEMPLO DE COMO ADICIONAR TOKEN DEFAULT CASO NECESSÁRIO
+        headers.put("Authorization", GlobalParameters.TOKEN);
     }
 
     public ValidatableResponse executeRequest() {
