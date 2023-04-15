@@ -1,4 +1,4 @@
-package com.javarestassuredtemplate.utils;
+package com.mantisapi.utils;
 
 import org.testng.ITestResult;
 import java.io.IOException;

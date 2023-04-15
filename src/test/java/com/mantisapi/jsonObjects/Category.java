@@ -1,4 +1,5 @@
-package com.javarestassuredtemplate.jsonObjects;
+package com.mantisapi.jsonObjects;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,11 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Pet {
+public class Category {
     private long id;
-    private Category category;
     private String name;
-    private String[] photoUrls;
-    private Tag[] tags;
-    private String status;
 }

@@ -1,6 +1,6 @@
-package com.javarestassuredtemplate.utils;
+package com.mantisapi.utils;
 
-import com.javarestassuredtemplate.GlobalParameters;
+import com.mantisapi.GlobalParameters;
 
 import java.sql.*;
 import java.util.ArrayList;

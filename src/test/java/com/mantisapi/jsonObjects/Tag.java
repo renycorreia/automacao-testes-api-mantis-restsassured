@@ -1,4 +1,4 @@
-package com.javarestassuredtemplate.jsonObjects;
+package com.mantisapi.jsonObjects;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Category {
+public class Tag {
     private long id;
     private String name;
 }

@@ -1,6 +1,6 @@
-package com.javarestassuredtemplate.utils;
+package com.mantisapi.utils;
 
-import com.javarestassuredtemplate.enums.AuthenticationType;
+import com.mantisapi.enums.AuthenticationType;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;

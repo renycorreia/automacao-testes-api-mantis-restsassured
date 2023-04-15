@@ -1,9 +1,7 @@
-package com.javarestassuredtemplate.bases;
+package com.mantisapi.bases;
 
-import com.javarestassuredtemplate.GlobalParameters;
-import com.javarestassuredtemplate.steps.AutenticacaoSteps;
-import com.javarestassuredtemplate.utils.ExtentReportsUtils;
-import org.codehaus.groovy.transform.tailrec.GotoRecurHereException;
+import com.mantisapi.GlobalParameters;
+import com.mantisapi.utils.ExtentReportsUtils;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;

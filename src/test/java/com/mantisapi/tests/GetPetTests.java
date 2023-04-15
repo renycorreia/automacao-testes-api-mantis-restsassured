@@ -1,7 +1,7 @@
-package com.javarestassuredtemplate.tests;
+package com.mantisapi.tests;
 
-import com.javarestassuredtemplate.bases.TestBase;
-import com.javarestassuredtemplate.requests.GetPetRequest;
+import com.mantisapi.bases.TestBase;
+import com.mantisapi.requests.GetPetRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;

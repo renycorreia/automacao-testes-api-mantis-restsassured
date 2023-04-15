@@ -1,7 +1,7 @@
-package com.javarestassuredtemplate.requests;
+package com.mantisapi.requests;
 
-import com.javarestassuredtemplate.GlobalParameters;
-import com.javarestassuredtemplate.bases.RequestRestBase;
+import com.mantisapi.GlobalParameters;
+import com.mantisapi.bases.RequestRestBase;
 import io.restassured.http.Method;
 
 public class GetTokenRequest extends RequestRestBase {

@@ -1,6 +1,6 @@
-package com.javarestassuredtemplate.requests;
+package com.mantisapi.requests;
 
-import com.javarestassuredtemplate.bases.RequestRestBase;
+import com.mantisapi.bases.RequestRestBase;
 import io.restassured.http.Method;
 
 public class GetPetRequest extends RequestRestBase {

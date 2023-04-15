@@ -1,10 +1,10 @@
-package com.javarestassuredtemplate.dbsteps;
+package com.mantisapi.dbsteps;
 
-import com.javarestassuredtemplate.utils.DBUtils;
-import com.javarestassuredtemplate.utils.GeneralUtils;
+import com.mantisapi.utils.DBUtils;
+import com.mantisapi.utils.GeneralUtils;
 
 public class UsuariosDBSteps {
-    private static String queriesPath = System.getProperty("user.dir")+"/src/test/java/com/javarestassuredtemplate/queries/";
+    private static String queriesPath = System.getProperty("user.dir")+"/src/test/java/com/mantisapi/queries/";
 
     public static String retornaSenhaDoUsuario(String userName){
         String query = GeneralUtils.readFileToAString(queriesPath + "retornaSenhaUsuarioQuery");

@@ -1,10 +1,10 @@
-package com.javarestassuredtemplate.requests;
+package com.mantisapi.requests;
 
-import com.javarestassuredtemplate.bases.RequestRestBase;
-import com.javarestassuredtemplate.jsonObjects.Category;
-import com.javarestassuredtemplate.jsonObjects.Pet;
-import com.javarestassuredtemplate.jsonObjects.Tag;
-import com.javarestassuredtemplate.utils.GeneralUtils;
+import com.mantisapi.bases.RequestRestBase;
+import com.mantisapi.jsonObjects.Category;
+import com.mantisapi.jsonObjects.Pet;
+import com.mantisapi.jsonObjects.Tag;
+import com.mantisapi.utils.GeneralUtils;
 import io.restassured.http.Method;
 
 public class PostPetRequest extends RequestRestBase {
@@ -21,7 +21,7 @@ public class PostPetRequest extends RequestRestBase {
                             int tagId,
                             String tagName,
                             String status){
-        jsonBody = GeneralUtils.readFileToAString("src/test/java/com/javarestassuredtemplate/jsons/PostPetJson.json")
+        jsonBody = GeneralUtils.readFileToAString("src/test/java/com/mantisapi/jsons/PostPetJson.json")
                                .replace("$id", String.valueOf(id))
                                .replace("$categoryId", String.valueOf(categoryId))
                                .replace("$categoryName", categoryName)

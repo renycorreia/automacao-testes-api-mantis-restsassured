@@ -1,14 +1,10 @@
-package com.javarestassuredtemplate.bases;
+package com.mantisapi.bases;
 
-import com.aventstack.extentreports.Status;
-import com.javarestassuredtemplate.GlobalParameters;
-import com.javarestassuredtemplate.enums.AuthenticationType;
-import com.javarestassuredtemplate.utils.ExtentReportsUtils;
-import com.javarestassuredtemplate.utils.GeneralUtils;
-import com.javarestassuredtemplate.utils.RestAssuredUtils;
+import com.mantisapi.GlobalParameters;
+import com.mantisapi.enums.AuthenticationType;
+import com.mantisapi.utils.ExtentReportsUtils;
+import com.mantisapi.utils.RestAssuredUtils;
 import io.restassured.config.RestAssuredConfig;
-import io.restassured.http.Header;
-import io.restassured.http.Method;
 import io.restassured.response.Response;
 
 import java.util.HashMap;

@@ -1,12 +1,12 @@
-package com.javarestassuredtemplate.bases;
+package com.mantisapi.bases;
 
 import static io.restassured.RestAssured.*;
 import static io.restassured.config.JsonConfig.jsonConfig;
 import static io.restassured.path.json.config.JsonPathConfig.NumberReturnType.BIG_DECIMAL;
-import com.javarestassuredtemplate.GlobalParameters;
-import com.javarestassuredtemplate.enums.AuthenticationType;
-import com.javarestassuredtemplate.utils.ExtentReportsUtils;
-import com.javarestassuredtemplate.utils.RestAssuredUtils;
+import com.mantisapi.GlobalParameters;
+import com.mantisapi.enums.AuthenticationType;
+import com.mantisapi.utils.ExtentReportsUtils;
+import com.mantisapi.utils.RestAssuredUtils;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.http.*;
 import io.restassured.response.Response;

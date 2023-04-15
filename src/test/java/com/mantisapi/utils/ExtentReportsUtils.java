@@ -1,11 +1,11 @@
-package com.javarestassuredtemplate.utils;
+package com.mantisapi.utils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.javarestassuredtemplate.GlobalParameters;
-import com.javarestassuredtemplate.enums.AuthenticationType;
+import com.mantisapi.GlobalParameters;
+import com.mantisapi.enums.AuthenticationType;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 import org.testng.ITestResult;

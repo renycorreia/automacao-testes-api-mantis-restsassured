@@ -1,10 +1,10 @@
-package com.javarestassuredtemplate.tests;
+package com.mantisapi.tests;
 
-import com.javarestassuredtemplate.bases.TestBase;
-import com.javarestassuredtemplate.jsonObjects.Category;
-import com.javarestassuredtemplate.jsonObjects.Pet;
-import com.javarestassuredtemplate.jsonObjects.Tag;
-import com.javarestassuredtemplate.requests.PostPetRequest;
+import com.mantisapi.bases.TestBase;
+import com.mantisapi.jsonObjects.Category;
+import com.mantisapi.jsonObjects.Pet;
+import com.mantisapi.jsonObjects.Tag;
+import com.mantisapi.requests.PostPetRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;

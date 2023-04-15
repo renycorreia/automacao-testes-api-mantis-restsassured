@@ -1,4 +1,4 @@
-package com.javarestassuredtemplate.enums;
+package com.mantisapi.enums;
 
 public enum AuthenticationType {
     BASIC,

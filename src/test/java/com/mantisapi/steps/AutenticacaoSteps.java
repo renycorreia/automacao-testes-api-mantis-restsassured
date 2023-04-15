@@ -1,7 +1,7 @@
-package com.javarestassuredtemplate.steps;
+package com.mantisapi.steps;
 
-import com.javarestassuredtemplate.GlobalParameters;
-import com.javarestassuredtemplate.requests.GetTokenRequest;
+import com.mantisapi.GlobalParameters;
+import com.mantisapi.requests.GetTokenRequest;
 import io.restassured.response.Response;
 
 public class AutenticacaoSteps {
