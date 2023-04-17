@@ -1,4 +1,4 @@
-package com.mantisapi.requests;
+package com.mantisapi.requests.config;
 
 import com.mantisapi.bases.RequestRestBase;
 import io.restassured.http.Method;

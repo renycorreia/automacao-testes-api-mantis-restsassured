@@ -1,16 +1,18 @@
 package com.mantisapi.tests;
 
 import com.mantisapi.bases.TestBase;
-import com.mantisapi.requests.GetConfigRequest;
+import com.mantisapi.requests.config.GetConfigRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import static org.hamcrest.Matchers.*;
 
-public class GetConfigTests extends TestBase {
+public class ConfigTests extends TestBase {
     GetConfigRequest getConfigRequest;
 
     @Test
@@ -26,10 +28,15 @@ public class GetConfigTests extends TestBase {
         //Asserções
         response.statusCode(statusCodeEsperado);
 
-        response.body("configs", hasSize(1)
-                        , "configs.option",  is(Arrays.asList("default_bug_priority"))
-                        , "configs.value",  is(Arrays.asList(30))
-                    );
+        response.body("configs", isA(List.class)
+                , "configs", hasSize(1)
+                , "configs.option", isA(List.class)
+                , "configs.option",  is(Collections.singletonList("default_bug_priority"))
+                , "configs.option[0]", isA(String.class)
+                , "configs.value", isA(List.class)
+                , "configs.value",  is(Collections.singletonList(30))
+                , "configs.value[0]", isA(Integer.class)
+        );
     }
 
     @Test
@@ -45,7 +52,8 @@ public class GetConfigTests extends TestBase {
         //Asserções
         response.statusCode(statusCodeEsperado);
 
-        response.body("configs", hasSize(0)
-                    );
+        response.body("configs", isA(List.class)
+                ,"configs", hasSize(0)
+        );
     }
 }
