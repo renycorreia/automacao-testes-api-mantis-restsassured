@@ -14,9 +14,9 @@ import java.util.ArrayList;
 public class ProjectFull {
     private int id;
     private ProjectData projectData;
-    Access_level Access_levelObject;
-    ArrayList<CustomField>custom_fields = new ArrayList<>();
-    ArrayList<Version>versions = new ArrayList<>();
-    ArrayList<Category>categories = new ArrayList<>();
+    Access_level access_level;
+    ArrayList<CustomField> custom_fields = new ArrayList<>();
+    ArrayList<Version> versions = new ArrayList<>();
+    ArrayList<Category> categories = new ArrayList<>();
 }
 
