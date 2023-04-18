@@ -1,8 +1,11 @@
 package com.mantisapi.tests;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 import com.mantisapi.bases.TestBase;
 import com.mantisapi.jsonObjects.project.ProjectData;
+import com.mantisapi.jsonObjects.project.ProjectFull;
 import com.mantisapi.jsonObjects.project.ProjectNewName;
 import com.mantisapi.requests.project.DeleteProjectsRequest;
 import com.mantisapi.requests.project.GetProjectsRequest;
@@ -10,7 +13,7 @@ import com.mantisapi.requests.project.PatchProjectsRequest;
 import com.mantisapi.requests.project.PostProjectsRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.List;
 import java.util.Locale;
@@ -28,8 +31,7 @@ public class ProjectTests extends TestBase {
         int statusCodeEsperado = HttpStatus.SC_OK;
 
         //Fluxo
-        getProjectsRequest = new GetProjectsRequest();
-        ValidatableResponse response = getProjectsRequest.executeRequest();
+        ValidatableResponse response = retornarTodosProjetos();
 
         //Asserções
         response.statusCode(statusCodeEsperado);
@@ -74,6 +76,7 @@ public class ProjectTests extends TestBase {
         ProjectData project = new ProjectData();
         project.setName("Project "+faker.food().fruit());
         project.setDescription(faker.howIMetYourMother().catchPhrase());
+        project.setEnabled(true);
 
         ValidatableResponse response = criarProjeto(project);
 
@@ -116,12 +119,19 @@ public class ProjectTests extends TestBase {
         ProjectData project = new ProjectData();
         project.setName("Project "+faker.food().fruit());
         project.setDescription(faker.howIMetYourMother().catchPhrase());
+        project.setEnabled(true);
 
         ValidatableResponse response = criarProjeto(project);
 
+        /*int id = response
+                .extract()
+                .path("project.id")
+                ;*/
+
         int id = response
-                    .extract()
-                    .path("project.id")
+                .extract()
+                .jsonPath()
+                .getInt("project.id")
                 ;
 
         StringBuilder projectNameReverso = new  StringBuilder();
@@ -152,17 +162,17 @@ public class ProjectTests extends TestBase {
         ProjectData project = new ProjectData();
         project.setName("Project "+faker.food().fruit());
         project.setDescription(faker.howIMetYourMother().catchPhrase());
+        project.setEnabled(true);
 
         ValidatableResponse response = criarProjeto(project);
 
-        int id = response
+        int idProject = response
                 .extract()
-                .path("project.id")
-                ;
+                .jsonPath()
+                .getInt("project.id")
+        ;
 
-        deleteProjectsRequest = new DeleteProjectsRequest(id);
-
-        response = deleteProjectsRequest.executeRequest();
+        response = excluirProjeto(idProject);
 
         response.statusCode(statusCodeEsperado);
     }
@@ -177,16 +187,52 @@ public class ProjectTests extends TestBase {
         ProjectData project = new ProjectData();
         project.setName("");
         project.setDescription(faker.howIMetYourMother().catchPhrase());
+        project.setEnabled(true);
 
         ValidatableResponse response = criarProjeto(project);
 
         response.statusCode(statusCodeEsperado);
     }
 
+    @AfterClass
+    public void excluirTodosProjetos()
+    {
+        ValidatableResponse response = retornarTodosProjetos();
+
+        List<Integer> ids = response
+                        .extract()
+                        .path("projects.id");
+
+        for(int idProject : ids){
+            response = excluirProjeto(idProject);
+
+            response.statusCode(HttpStatus.SC_OK);
+        }
+    }
+
     public ValidatableResponse criarProjeto(ProjectData project)
     {
         postProjectsRequest = new PostProjectsRequest(project);
 
-        return postProjectsRequest.executeRequest();
+        ValidatableResponse response = postProjectsRequest.executeRequest();
+
+        return response;
+    }
+
+    public ValidatableResponse retornarTodosProjetos()
+    {
+        getProjectsRequest = new GetProjectsRequest();
+        ValidatableResponse response = getProjectsRequest.executeRequest();
+
+        return response;
+    }
+
+    public ValidatableResponse excluirProjeto(int idProject)
+    {
+        deleteProjectsRequest = new DeleteProjectsRequest(idProject);
+
+        ValidatableResponse response = deleteProjectsRequest.executeRequest();
+
+        return response;
     }
 }

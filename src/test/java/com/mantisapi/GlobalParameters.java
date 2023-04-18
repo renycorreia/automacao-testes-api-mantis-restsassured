@@ -44,7 +44,7 @@ public class GlobalParameters {
             DB_NAME = properties.getProperty("hml.db.name");
             DB_USER = properties.getProperty("hml.db.user");
             DB_PASSWORD = properties.getProperty("hml.db.password");
-            URL_DEFAULT = properties.getProperty("hml.url.default");
+            URL_DEFAULT = properties.getProperty("hml.url.default")+properties.getProperty("hml.url.basePath");
             URL_TOKEN = properties.getProperty("hml.url.token");
             TOKEN = properties.getProperty("hml.token");
             AUTHENTICATOR_USER = properties.getProperty("hml.authenticator.user");
@@ -56,7 +56,7 @@ public class GlobalParameters {
             DB_NAME = properties.getProperty("dev.db.name");
             DB_USER = properties.getProperty("dev.db.user");
             DB_PASSWORD = properties.getProperty("dev.db.password");
-            URL_DEFAULT = properties.getProperty("dev.url.default");
+            URL_DEFAULT = properties.getProperty("dev.url.default")+properties.getProperty("dev.url.basePath");
             URL_TOKEN = properties.getProperty("dev.url.token");
             TOKEN = properties.getProperty("dev.token");
             AUTHENTICATOR_USER = properties.getProperty("dev.authenticator.user");
